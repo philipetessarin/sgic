@@ -85,8 +85,10 @@
                     </div>
                 </div>
                 <div class="row right">
-                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save">Salvar</button>
-                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit">Enviar</button>
+                    <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save" value="Salvar">
+                    <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit" value="Enviar">
+                    <!--<button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save">Salvar</button>
+                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit">Enviar</button>-->
                 </div>
             </form>
         </div>

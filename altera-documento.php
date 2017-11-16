@@ -10,9 +10,10 @@ $destinatario = $_POST['destinatario_id'];
 $data = $_POST['data_atual'];
 $titulo = $_POST['titulo'];
 $mensagem = $_POST['mensagem'];
+$btnStatus = $_POST['btn_status'];
 
 
-if(alteraDocumento($conexao, $id, $remetente, $destinatario, $data, $titulo, $mensagem)) { ?>
+if(alteraDocumento($conexao, $id, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus)) { ?>
 
         <p class="green-text center">O Documento <?=$titulo?> foi alterado.</p>
 

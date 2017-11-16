@@ -25,7 +25,7 @@ require_once('paginacao-recebido-comeco.php');
     $recebido = usuarioLogado();
 
     foreach($documentos as $documento) :
-        if($recebido == $documento['destinatario_nome']) {
+        if($recebido == $documento['destinatario_nome'] and $documento['btn_status'] == 0) {
             //while($documento = mysqli_fetch_assoc($resultado_recebidos)){
             ?>
 

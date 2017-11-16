@@ -15,21 +15,47 @@ $titulo = $_POST['titulo'];
 $mensagem = $_POST['mensagem'];
 
 
-if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
-    insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem);
-    ?>
-    <p class="center green-text">Documento <?=$titulo;?> adicionado com sucesso!</p>
-    <?php
-    header( 'refresh: 2; url= "usuario-principal.php#recebidos"' );
-    die();
-} else {
-    $msg = mysqli_error($conexao);
-    ?>
-    <p class="center red-text">Documento <?=$titulo;?> não foi adicionado.</p>
-    <?php
-    header( 'refresh: 2; url= "documento.php#agendamento"' );
-    die();
+if(isset($_POST['submit']))
+{
+    $btnStatus = 0;
+
+    if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
+        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus);
+        ?>
+        <p class="center green-text">Documento <?=$titulo;?> adicionado com sucesso!</p>
+        <?php
+        header( 'refresh: 2; url= "usuario-principal.php#recebidos"' );
+        die();
+    } else {
+        $msg = mysqli_error($conexao);
+        ?>
+        <p class="center red-text">Documento <?=$titulo;?> não foi adicionado.</p>
+        <?php
+        header( 'refresh: 2; url= "documento.php#agendamento"' );
+        die();
+    }
+} elseif($_POST['save']) {
+
+    $btnStatus = 1;
+
+    if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
+        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus);
+        ?>
+        <p class="center green-text">Documento <?=$titulo;?> adicionado com sucesso!</p>
+        <?php
+        header( 'refresh: 2; url= "usuario-principal.php#recebidos"' );
+        die();
+    } else {
+        $msg = mysqli_error($conexao);
+        ?>
+        <p class="center red-text">Documento <?=$titulo;?> não foi adicionado.</p>
+        <?php
+        header( 'refresh: 2; url= "documento.php#agendamento"' );
+        die();
+    }
 }
+
+
 ?>
 
 

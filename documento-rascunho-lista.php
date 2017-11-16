@@ -29,7 +29,7 @@ $name = $_SESSION['salvar'];
     $documentos = listaDocumentos($conexao);
     foreach($documentos as $documento) :
     //while($documento = mysqli_fetch_assoc($resultado_enviados)){
-     if(usuarioLogado() == $documento['remetente']) {
+     if(usuarioLogado() == $documento['remetente'] and $documento['btn_status'] == 1) {
          ?>
 
          <tbody>
