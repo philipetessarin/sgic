@@ -1,8 +1,10 @@
 <?php
     require_once('banco-grupo.php');
+    require_once ('paginacao-grupo-comeco.php');
     $grupos = listaGrupos($conexao);
 ?>
 
+<div class="row">
 <table class="bordered">
 
     <thead>
@@ -14,6 +16,7 @@
 
     <?php
         foreach($grupos as $grupo) :
+        while($grupo = mysqli_fetch_assoc($resultado_grupos)){
     ?>
 
     <tbody>
@@ -37,10 +40,12 @@
 
 
     <?php
+        }
         endforeach;
     ?>
 </table>
-
+</div>
+<?php require_once ('paginacao-grupo-fim.php'); ?>
 
 
 

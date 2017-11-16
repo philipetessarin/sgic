@@ -25,13 +25,24 @@
             <ul class="tabs tabs-transparent" style="width:35em;" >
                 <li class="tab"><a  class="active" href="#recebidos">RECEBIDOS</a></li>
                 <li class="tab"><a href="#enviados">ENVIADOS</a></li>
-                <li class="tab"><a href="#autorizados">AUTORIZADOS</a></li>
+                <li class="tab disabled"><a href="#autorizados">AUTORIZADOS</a></li>
                 <li class="tab"><a href="#rascunhos">RASCUNHOS</a></li>
               </ul>
         </div>
     </div>
 </nav>
+<nav>
+    <div class="nav-wrapper #424242 grey darken-3">
+        <form method="post" action="pesquisar-documento.php">
+            <div class="input-field">
+                <input id="search" type="search" placeholder="Digite o nome do documento" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
 <br><br>
 
 
-<?php require_once ('rodape.php');?>
+

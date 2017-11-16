@@ -12,7 +12,7 @@
     <form action="altera-usuario.php" method="post" class="col s12">
         <input type="hidden" name="id" value="<?=$usuario['id']?>">
 
-        <?php include('usuario-formulario-base.php'); ?>
+        <?php require_once('usuario-formulario-base.php'); ?>
 
         <div class="row center">
             <a href="adm-principal.php" class="btn #ff6f00 amber darken-4">Cancelar</a>
@@ -23,9 +23,7 @@
     </form>
 </div>
 
-<?php
-    require_once('rodape.php');
-?>
+
 
 
 

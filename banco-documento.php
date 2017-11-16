@@ -17,7 +17,7 @@ function insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $m
     $data = mysqli_real_escape_string($conexao, $data);
     $titulo = mysqli_real_escape_string($conexao, $titulo);
     $mensagem = mysqli_real_escape_string($conexao, $mensagem);
-    $query = "insert into usuarios (remetente_id, destinatario_id, data_atual, titulo, mensagem) values ({$remetente}, {$destinatario}, '{$data}', '{$titulo}', '{$mensagem}')";
+    $query = "insert into documentos (remetente, destinatario_id, data_atual, titulo, mensagem) values ('{$remetente}', {$destinatario}, '{$data}', '{$titulo}', '{$mensagem}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
 }
@@ -31,7 +31,7 @@ function buscaDocumento($conexao, $id) {
 
 
 function alteraDocumento($conexao, $id, $remetente, $destinatario, $data, $titulo, $mensagem) {
-    $query = "update usuarios set remetente_id = {$remetente}, destinatario_id = {$destinatario}, data_atual = '{$data}', titulo = '{$titulo}', mensagem = '{$mensagem}'  where id = '{$id}'";
+    $query = "update documentos set remetente = '{$remetente}', destinatario_id = '{$destinatario}', data_atual = '{$data}', titulo = '{$titulo}', mensagem = '{$mensagem}'  where id = '{$id}'";
     return mysqli_query($conexao, $query);
 }
 

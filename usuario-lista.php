@@ -2,9 +2,12 @@
 
     require_once('banco-usuario.php');
     require_once('logica-usuario.php');
+    require_once('paginacao-usuario-comeco.php');
     //$usuarios = listaUsuarios($conexao);
-?>
 
+
+?>
+<div class="row">
 <table class="bordered">
 
     <thead>
@@ -19,6 +22,7 @@
     <?php
         $usuarios = listaUsuarios($conexao);
         foreach($usuarios as $usuario) :
+        while($usuario = mysqli_fetch_assoc($resultado_usuarios)){
     ?>
 
     <tbody>
@@ -44,9 +48,16 @@
 
 
     <?php
+        }
         endforeach;
     ?>
 </table>
+</div>
+
+<?php
+    require_once ('paginacao-usuario-fim.php');
+?>
+
 
 
 

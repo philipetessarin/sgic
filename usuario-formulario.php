@@ -1,8 +1,4 @@
 <?php
-    //include ('conecta.php');
-    //include ('banco-usuario.php');
-    //include('banco-grupo.php');
-    //include ('logica-usuario.php');
 
     //verificaUsuario();
 
@@ -10,11 +6,11 @@
     $grupos = listaGrupos($conexao);
 ?>
 
-<h4 class="center">Cadastro de usuários</h4>
+        <h4 class="center">Cadastro de usuários</h4>
         <div class="row">
             <form action="adiciona-usuario.php" method="post" class="col s12">
 
-                <?php include('usuario-formulario-base.php'); ?>
+                <?php  require_once ('usuario-formulario-base.php'); ?>
 
                 <div class="row center">
                     <a href="adm-principal.php" class="btn #ff6f00 amber darken-4">Cancelar</a>
@@ -24,6 +20,3 @@
             </form>
         </div>
 
-<?php
-    require_once('rodape.php');
-?>

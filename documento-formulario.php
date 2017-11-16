@@ -1,74 +1,67 @@
 <?php
-    require_once ('conecta.php');
-    require_once ('banco-usuario.php');
-    require_once ('banco-grupo.php');
-    require_once ('banco-documento.php');
-    require_once ('logica-usuario.php');
-
-    $documento = array("remetente_id" => "", "destinatario_id" => "", "data" => "", "titulo" => "", "messagem" => "");
-    $usuarios = listaUsuarios($conexao);
+$usuarios = listaUsuarios($conexao);
 ?>
 
 
 
-    <div class="container black-text">
-        <div id="form-container">
-            <form class="col s12" action="adiciona-documento.php" method="post">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="remetente" type="text" class="validate" value="<?=usuarioLogado()?>" disabled>
-                        <label for="remetente">Nome</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <select required name="destinatario_id">
-                            <option value="" disabled selected>Escolha uma opção</option>
-                            <?php foreach($usuarios as $usuario) :
-                                $essaEhACategoria = $documento['destinatario_id'] == $usuario['id'];
-                                $selecao = $essaEhACategoria ? "selected='selected'" : "";
-                                ?>
-                                <option value="<?=$usuario['id']?>" <?=$selecao?>>
-                                    <?=$usuario['nome']?>
-                                </option>
-                            <?php endforeach ?>
-                        </select>
-                        <label>Destinatário</label>
-                    </div>
+<div class="black-text">
+    <div id="form-container">
+        <form class="col s12" action="adiciona-documento.php" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="remetente" type="text" class="validate" name="remetente"  value="<?=usuarioLogado()?>" readonly>
+                    <label for="remetente">De</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="titulo" type="text" class="validate">
-                        <label for="titulo">Título</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="data" type="date" class="validate">
-                    </div>
+                <div class="input-field col s6">
+                    <select required name="destinatario_id">
+                        <option value="" disabled selected>Escolha uma opção</option>
+                        <?php foreach($usuarios as $usuario) :
+                            $essaEhACategoria = $documento['destinatario_id'] == $usuario['id'];
+                            $selecao = $essaEhACategoria ? "selected='selected'" : "";
+                            ?>
+                            <option value="<?=$usuario['id']?>" <?=$selecao?>>
+                                <?=$usuario['nome']?>
+                            </option>
+                        <?php endforeach ?>
+                    </select>
+                    <label>Para</label>
                 </div>
-                <div class="row form-group">
-                    <!--<label for="about">About me</label>
-                    <input name="about" type="hidden">-->
-                    <div id="editor-container">
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="titulo" type="text" class="validate" name="titulo">
+                    <label for="titulo">Título</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="data_atual" type="text" class="validate" name="data_atual">
+                    <label for="data_atual">Data</label>
+                </div>
+            </div>
+            <div class="row">
+                <!--<label for="about">About me</label>
+                <input name="about" type="hidden">-->
+                <textarea id="mensagem" name="mensagem">
 
-                    </div>
+                </textarea>
+                <label for="mensagem"></label>
+            </div>
+            <div class="row">
+                <div class="switch col s6 inline">
+                    Autorização:
+                    <label>
+                        Não
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        Sim
+                    </label>
                 </div>
-                <div class="row">
-                    <div class="switch col s6 inline">
-                        Autorização:
-                        <label>
-                            Não
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                            Sim
-                        </label>
-                    </div>
-                </div>
-                <div class="row right">
-                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit">Salvar</button>
-                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit">Enviar</button>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="row right">
+                <button class="btn btn-primary #ff6f00 amber darken-4" type="submit">Salvar</button>
+                <button class="btn btn-primary #ff6f00 amber darken-4" type="submit">Enviar</button>
+            </div>
+        </form>
     </div>
-
-<?php
-    require_once ('rodape.php');
-?>
+</div>
+<br>
+<br>

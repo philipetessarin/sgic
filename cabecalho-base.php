@@ -11,9 +11,15 @@ require_once('mostra-alerta.php');
     <title>SGIC</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Include CSS for icons. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
     <!--Materialize CSS-->
     <link rel="stylesheet" href="css/materialize.css">
-    <link href="css/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="#e0e0e0 grey lighten-2">

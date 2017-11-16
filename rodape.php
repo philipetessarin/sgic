@@ -1,39 +1,40 @@
+<footer class="page-footer #212121 grey darken-4">
+    <div class="container">
+        <div class="row">
+            <div class="col  s12">
+                <p class="center">
+                    CENTRO UNIVERSITÁRIO LUTERANO DE PALMAS<br>
+                    Avenida Teotônio Segurado 1501 Sul Palmas - TO CEP 77.019-900 Caixa Postal nº 85<br>
+                    Fone: (63) 3219 8000<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <!--Materialize JS-->
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/materialize.js"></script>
-<script src="js/quill.js"></script>
+<!-- Include Editor JS files. -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+
+<!-- Initialize the editor. -->
 <script>
-    var quill = new Quill('#editor-container', {
-        modules: {
-            toolbar: [
-                ['bold', 'italic'],
-                ['link', 'blockquote', 'code-block', 'image'],
-                [{ list: 'ordered' }, { list: 'bullet' }]
-            ]
-        },
-        placeholder: 'Digite seu documento aqui',
-        theme: 'snow'
+    $(function() {
+        $('textarea').froalaEditor()
     });
-
-    var form = document.querySelector('form');
-    form.onsubmit = function() {
-        // Populate hidden form on submit
-        var about = document.querySelector('input[name=about]');
-        about.value = JSON.stringify(quill.getContents());
-
-        console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-
-        // No back end to actually submit to!
-        alert('Open the console to see the submit data!')
-        return false;
-    };
-
 </script>
+
 <script>
     $(document).ready(function(){
         $('.collapsible').collapsible();
         Materialize.updateTextFields();
         $('select').material_select();
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#previewDiv :input").attr("disabled", true);
     });
 </script>
 </body>

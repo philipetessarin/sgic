@@ -16,12 +16,6 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<?php
-    mostraAlerta("success");
-    mostraAlerta("danger");
-?>
-
-
 
 <?php if(usuarioEstaLogado()) {?>
     <p class="green-text center">Você está logado como <?=usuarioLogado()?>.</p>
@@ -53,6 +47,11 @@
                                 <label for="password">Senha</label>
                             </div>
                         </div>
+                       <?php
+                           mostraAlerta("success");
+                           mostraAlerta("danger");
+                       ?>
+                        <br>
                         <a href="#" class="white-text">Esqueceu a senha?</a>
                         <div class="row">
                            <div class="card-action center">

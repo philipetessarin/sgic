@@ -1,5 +1,11 @@
 <?php
     require_once ('doc-cabecalho.php');
+    require_once ('logica-usuario.php');
+    require_once ('banco-usuario.php');
+    require_once ('banco-grupo.php');
+    require_once ('banco-documento.php');
+
+$usuarios = listaUsuarios($conexao);
 ?>
 
             <!--Abas de navegação-->
@@ -20,13 +26,22 @@
 
 
 <div id="agendamento" class="col s12 container">
+    <?php require_once ('modelo-agendamento.php'); ?>
 </div>
-<div id="requisicao" class="col s12 container">Test 2</div>
+<div id="requisicao" class="col s12 container">
+    <?php
+        require_once ('modelo-requisicao.php');
+    ?>
+</div>
 <div id="manutencao" class="col s12 container">
-    <?php require_once ('documento-formulario_2.php'); ?>
+    <?php
+        require_once ('modelo-manutencao.php');
+    ?>
 </div>
 <div id="pbranco" class="col s12 container">
-    <?php require_once ('documento-formulario.php'); ?>
+    <?php
+        require_once('documento-formulario.php');
+    ?>
 </div>
 
 
