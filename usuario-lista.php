@@ -36,7 +36,6 @@
                 <input type="hidden" name="id" value="<?=$usuario['id']?>">
                 <button class="btn blue">Alterar</button>
             </form>
-            <!--<a class="btn blue" href="usuario-altera-formulario.php">alterar</a></td>-->
         <td>
             <form action="remove-usuario.php" method="post">
                 <input type="hidden" name="id" value="<?=$usuario['id']?>">

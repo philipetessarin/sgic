@@ -35,7 +35,7 @@
     <div class="nav-wrapper #424242 grey darken-3">
         <form method="post" action="pesquisar-documento.php">
             <div class="input-field">
-                <input id="search" type="search" placeholder="Digite o nome do documento" required>
+                <input id="search" type="search" name="pesquisar"  placeholder="Digite o título do documento" required>
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
             </div>
@@ -43,6 +43,8 @@
     </div>
 </nav>
 <br><br>
+
+
 
 
 

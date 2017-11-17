@@ -12,7 +12,7 @@ require_once('doc-cabecalho.php');
 </nav>
 <br><br>
 
-<div id="alterarDocumento" class="col s12 container">
+<div id="visualizarDocumento" class="col s12 container">
     <?php require_once('documento-visualiza-formulario.php');?>
 </div>
 
