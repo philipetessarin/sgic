@@ -4,10 +4,6 @@ require_once('banco-documento.php');
 require_once ('banco-usuario.php');
 require_once('logica-usuario.php');
 require_once ('paginacao-rascunho-comeco.php');
-require_once ('botao.php');
-//$usuarios = listaUsuarios($conexao);
-session_start();
-$name = $_SESSION['salvar'];
 
 ?>
 
@@ -28,10 +24,9 @@ $name = $_SESSION['salvar'];
 
     $documentos = listaDocumentos($conexao);
     foreach($documentos as $documento) :
-    //while($documento = mysqli_fetch_assoc($resultado_enviados)){
+    //while($documento = mysqli_fetch_assoc($resultado_rascunhos)){
      if(usuarioLogado() == $documento['remetente'] and $documento['btn_status'] == 1) {
          ?>
-
          <tbody>
          <tr>
              <td><?= $documento['id'] ?></td>

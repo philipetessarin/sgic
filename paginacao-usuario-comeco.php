@@ -8,7 +8,7 @@ $resultado_usuario = mysqli_query($conexao, $result_usuario);
 
 $total_usuarios = mysqli_num_rows($resultado_usuario);
 
-$qtdPag = 5;
+$qtdPag = 20;
 
 $num_pagina = ceil($total_usuarios/$qtdPag);
 

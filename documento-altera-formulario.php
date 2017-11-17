@@ -43,7 +43,7 @@ $usuarios = listaUsuarios($conexao);
                         <label for="titulo">Título</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="data_atual" type="text" class="validate" name="data_atual" value="<?=$documento['data_atual']?>" required>
+                        <input id="data_atual" type="text" class="datepicker" name="data_atual" value="<?=$documento['data_atual']?>" required>
                         <label for="data_atual">Data</label>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ $usuarios = listaUsuarios($conexao);
                 </div>
                 <div class="row center">
                     <a href="usuario-principal.php" class="btn #ff6f00 amber darken-4">Cancelar</a>
-                    <a href="usuario-principal.php" class="btn #ff6f00 amber darken-4">Salvar</a>
-                    <button class="btn #ff6f00 amber darken-4" type="submit">Enviar</button>
+                    <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save" value="Salvar">
+                    <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit" value="Enviar">
                 </div>
             </form>
         </div>

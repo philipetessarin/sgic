@@ -8,7 +8,7 @@ $resultado_rascunho = mysqli_query($conexao, $result_rascunho);
 
 $total_rascunhos = mysqli_num_rows($resultado_rascunho);
 
-$qtdPag = 5;
+$qtdPag = 20;
 
 $num_pagina = ceil($total_rascunhos/$qtdPag);
 

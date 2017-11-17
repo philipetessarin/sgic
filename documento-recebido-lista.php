@@ -4,7 +4,6 @@ require_once('banco-documento.php');
 require_once ('banco-usuario.php');
 require_once('logica-usuario.php');
 require_once('paginacao-recebido-comeco.php');
-//$usuarios = listaUsuarios($conexao);
 ?>
 
 <table class="bordered">
@@ -25,8 +24,8 @@ require_once('paginacao-recebido-comeco.php');
     $recebido = usuarioLogado();
 
     foreach($documentos as $documento) :
+        //while($documento = mysqli_fetch_assoc($resultado_recebidos)){
         if($recebido == $documento['destinatario_nome'] and $documento['btn_status'] == 0) {
-            //while($documento = mysqli_fetch_assoc($resultado_recebidos)){
             ?>
 
             <tbody>

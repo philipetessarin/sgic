@@ -55,7 +55,6 @@ $usuarios = listaUsuarios($conexao);
                                 </td>
                             </th>
                         </table>
-
                     </div>
                 </div>
                 <div class="row">
@@ -71,7 +70,7 @@ $usuarios = listaUsuarios($conexao);
                 </div>
                 <div class="row center">
                     <a href="usuario-principal.php#recebidos" class="btn #ff6f00 amber darken-4">Voltar</a>
-                    <button class="btn #ff6f00 amber darken-4" type="submit">Executar</button>
+                    <!--<button class="btn #ff6f00 amber darken-4" type="submit">Executar</button>-->
                 </div>
             </form>
         </div>

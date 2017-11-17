@@ -8,7 +8,7 @@ $resultado_enviado = mysqli_query($conexao, $result_enviado);
 
 $total_enviados = mysqli_num_rows($resultado_enviado);
 
-$qtdPag = 5;
+$qtdPag = 20;
 
 $num_pagina = ceil($total_enviados/$qtdPag);
 

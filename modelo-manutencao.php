@@ -34,13 +34,11 @@
                         <label for="titulo">Título</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="data_atual" type="text" class="validate" name="data_atual" required>
+                        <input id="data_atual" type="text" class="datepicker" name="data_atual" required>
                         <label for="data_atual">Data</label>
                     </div>
                 </div>
                 <div class="row">
-                    <!--<label for="about">About me</label>
-                    <input name="about" type="hidden">-->
                     <textarea id="mensagem" name="mensagem">
                         <p style="text-align: center;"><strong><span style="font-size: 18px; font-family: Verdana, Geneva, sans-serif;">SOLICITA&Ccedil;&Atilde;O DE MANUTEN&Ccedil;&Atilde;O</span></strong></p>
 
@@ -87,8 +85,6 @@
                 <div class="row right">
                     <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save" value="Salvar">
                     <input class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit" value="Enviar">
-                    <!--<button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="save">Salvar</button>
-                    <button class="btn btn-primary #ff6f00 amber darken-4" type="submit" name="submit">Enviar</button>-->
                 </div>
             </form>
         </div>

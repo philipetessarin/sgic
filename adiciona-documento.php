@@ -24,14 +24,14 @@ if(isset($_POST['submit']))
         ?>
         <p class="center green-text">Documento <?=$titulo;?> adicionado com sucesso!</p>
         <?php
-        header( 'refresh: 2; url= "usuario-principal.php#recebidos"' );
+        header( 'refresh: 1; url= "usuario-principal.php#recebidos"' );
         die();
     } else {
         $msg = mysqli_error($conexao);
         ?>
         <p class="center red-text">Documento <?=$titulo;?> não foi adicionado.</p>
         <?php
-        header( 'refresh: 2; url= "documento.php#agendamento"' );
+        header( 'refresh: 1; url= "documento.php#agendamento"' );
         die();
     }
 } elseif($_POST['save']) {
