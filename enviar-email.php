@@ -1,5 +1,13 @@
 <?php
-require 'PHPMailer/PHPMailerAutoload.php';
+
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
+
+require_once ('PHPMailer/src/Exception.php');
+require_once ('PHPMailer/src/PHPMailer.php');
+require_once ('PHPMailer/src/SMTP.php');
+
 
 $Mailer = new PHPMailer();
 
@@ -21,8 +29,9 @@ $Mailer->Host = 'smtp.gmail.com';
 //Porta de saida de e-mail
 $Mailer->Port = 465;
 
+
 //Dados do e-mail de saida - autenticação
-$Mailer->Username = 'admin.sgic@gmail.com';
+$Mailer->Username = 'adm.sgic@gmail.com';
 $Mailer->Password = '3adUlbr@17';
 
 //E-mail remetente (deve ser o mesmo de quem fez a autenticação)
@@ -42,6 +51,8 @@ $Mailer->AltBody = 'conteudo do E-mail em texto';
 
 //Destinatario
 $Mailer->AddAddress('philipetessarin@ceulp.edu.br');
+
+
 
 if($Mailer->Send()){
     echo "E-mail enviado com sucesso";
