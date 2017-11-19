@@ -3,10 +3,10 @@
 
 ?>
 
-<div id="usuarios" class="col s12 container">
+<div id="usuarios" class="col s12">
     <?php require_once('usuario-lista.php'); ?>
 </div>
-<div id="grupos" class="col s12 container">
+<div id="grupos" class="col s12">
     <?php require_once('grupo-lista.php'); ?>
 </div>
 

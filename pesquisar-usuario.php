@@ -1,7 +1,6 @@
 <?php
 require_once('cadastro-cabecalho.php');
 require_once ('banco-usuario.php');
-require_once ('banco-grupo.php');
 require_once ('logica-usuario.php');
 
 
@@ -25,7 +24,7 @@ $resultado_users = mysqli_query($conexao, $result_users);
 <br><br>
 
     <div id="pesquisarUsuario" class="col s12 container">
-        <?php require_once('usuario-grupo-pesquisa-lista.php');?>
+        <?php require_once('usuario-pesquisa-lista.php');?>
     </div>
 
 
