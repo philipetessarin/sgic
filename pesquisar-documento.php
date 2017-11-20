@@ -1,12 +1,8 @@
 <?php
-require_once('doc-cabecalho.php');
-require_once ('banco-documento.php');
-require_once ('logica-usuario.php');
 
-
-
-
-
+    require_once('doc-cabecalho.php');
+    require_once ('banco-documento.php');
+    require_once ('logica-usuario.php');
 
 $pesquisar = $_POST['pesquisar'];
 $result_pesquisas = "select * from documentos where titulo like '%$pesquisar%' LIMIT 5";

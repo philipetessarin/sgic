@@ -21,12 +21,6 @@
                             <button class="btn blue">Alterar</button>
                         </form>
                     </td>
-                    <!--<td>
-                        <form action="visualizacao-documento.php#visualizarDocumento" method="post">
-                            <input type="hidden" name="id" value="<?= $documento['id'] ?>">
-                            <button class="btn blue">Visualizar</button>
-                        </form>
-                    </td>-->
                 </tr>
                 </tbody>
 

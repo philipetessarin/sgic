@@ -11,13 +11,24 @@ function listaDocumentos($conexao) {
     return $documentos;
 }
 
-function insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus, $autorizacao) {
+function listaEmails($conexao) {
+    $emails = array();
+    $resultado = mysqli_query($conexao, "select d.*,u.email as destinatario_email  from documentos as d join usuarios as u on u.id = d.destinatario_id");
+
+    while($email = mysqli_fetch_assoc($resultado)) {
+        array_push($emails, $email);
+    }
+
+    return $emails;
+}
+
+function insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus) {
     $remetente = mysqli_real_escape_string($conexao, $remetente);
     $destinatario = mysqli_real_escape_string($conexao, $destinatario);
     $data = mysqli_real_escape_string($conexao, $data);
     $titulo = mysqli_real_escape_string($conexao, $titulo);
     $mensagem = mysqli_real_escape_string($conexao, $mensagem);
-    $query = "insert into documentos (remetente, destinatario_id, data_atual, titulo, mensagem, btn_status, autorizacao_id) values ('{$remetente}', {$destinatario}, '{$data}', '{$titulo}', '{$mensagem}', {$btnStatus}, {$autorizacao})";
+    $query = "insert into documentos (remetente, destinatario_id, data_atual, titulo, mensagem, btn_status) values ('{$remetente}', {$destinatario}, '{$data}', '{$titulo}', '{$mensagem}', {$btnStatus})";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
 }
@@ -30,8 +41,8 @@ function buscaDocumento($conexao, $id) {
 }
 
 
-function alteraDocumento($conexao, $id, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus, $autorizacao) {
-    $query = "update documentos set remetente = '{$remetente}', destinatario_id = '{$destinatario}', data_atual = '{$data}', titulo = '{$titulo}', mensagem = '{$mensagem}', btn_status = '{$btnStatus}', autorizacao_id = '{$autorizacao}'  where id = '{$id}'";
+function alteraDocumento($conexao, $id, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus) {
+    $query = "update documentos set remetente = '{$remetente}', destinatario_id = '{$destinatario}', data_atual = '{$data}', titulo = '{$titulo}', mensagem = '{$mensagem}', btn_status = '{$btnStatus}'  where id = '{$id}'";
     return mysqli_query($conexao, $query);
 }
 

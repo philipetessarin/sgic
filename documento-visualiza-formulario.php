@@ -58,19 +58,23 @@ $usuarios = listaUsuarios($conexao);
                     </div>
                 </div>
                 <div class="row">
-                    <div class="switch col s6 inline">
-                        Autorização:
-                        <label>
-                            Não
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                            Sim
-                        </label>
+                    <div class="input-field col s6">
+                        <select  disabled name="autorizacao_id">
+                            <option value="null" selected>Nenhum</option>
+                            <?php foreach($usuarios as $usuario) :
+                                $essaEhACategoria = $documento['autorizacao_id'] == $usuario['id'];
+                                $selecao = $essaEhACategoria ? "selected='selected'" : "";
+                                ?>
+                                <option value="<?=$usuario['id']?>" <?=$selecao?>>
+                                    <?=$usuario['nome']?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                        <label>Autorização</label>
                     </div>
                 </div>
                 <div class="row center">
                     <a href="usuario-principal.php#recebidos" class="btn #ff6f00 amber darken-4">Voltar</a>
-                    <!--<button class="btn #ff6f00 amber darken-4" type="submit">Executar</button>-->
                 </div>
             </form>
         </div>

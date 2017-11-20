@@ -1,7 +1,5 @@
 <?php
 
-    //verificaUsuario();
-
     $usuario = array("nome" => "", "grupo_id" => "", "email" => "", "setor" => "");
     $grupos = listaGrupos($conexao);
 ?>

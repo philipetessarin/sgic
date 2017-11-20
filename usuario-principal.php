@@ -10,7 +10,7 @@ require_once('usuario-cabecalho.php');
         <?php require_once('documento-enviado-lista.php')?>
     </div>
     <div id="autorizados" class="col s12 container">
-        Teste 3
+        <?php require_once('documento-autorizacao-lista.php') ?>
     </div>
     <div id="rascunhos" class="col s12 container">
         <?php require_once('documento-rascunho-lista.php'); ?>

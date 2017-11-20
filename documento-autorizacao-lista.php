@@ -18,14 +18,14 @@ require_once('paginacao-recebido-comeco.php');
     </thead>
 
     <?php
-
+    $usuario = listaUsuarios($conexao);
     $documentos = listaDocumentos($conexao);
 
     $recebido = usuarioLogado();
 
     foreach($documentos as $documento) :
         //while($documento = mysqli_fetch_assoc($resultado_recebidos)){
-        if($recebido == $documento['destinatario_nome'] and $documento['btn_status'] == 0) {
+        if($recebido == $documento['remetente'] and $documento['btn_status'] == 2) {
             ?>
 
             <tbody>

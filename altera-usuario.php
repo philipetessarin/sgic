@@ -1,7 +1,6 @@
 <?php
     require_once('adm-cabecalho.php');
     require_once('banco-usuario.php');
-    //include ('banco-grupo.php');
 ?>
 
 <?php

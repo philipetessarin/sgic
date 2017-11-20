@@ -17,7 +17,7 @@
 </head>
 
 
-<?php if(usuarioEstaLogado()) {?>
+<?php if(usuarioEstaLogado() and $usuario['grupo_id'] == 1 ) {?>
     <p class="green-text center">Você está logado como <?=usuarioLogado()?>.</p>
 
 <?php

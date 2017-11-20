@@ -5,7 +5,6 @@
 
     $id = $_POST['id'];
     removeUsuario($conexao, $id);
-    $_SESSION['success'] = "<p class='center green-text'>Usuário apagado com sucesso.</p>";
     header("Location: adm-principal.php");
     die();
 ?>

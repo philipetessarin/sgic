@@ -12,7 +12,6 @@ require_once ('paginacao-rascunho-comeco.php');
     <thead>
     <tr>
         <th>Número Documento</th>
-        <th>Remetente</th>
         <th>Destinatário</th>
         <th>Data</th>
         <th>Título</th>
@@ -30,7 +29,6 @@ require_once ('paginacao-rascunho-comeco.php');
          <tbody>
          <tr>
              <td><?= $documento['id'] ?></td>
-             <td><?=usuarioLogado()?></td>
              <td>
                  <?= $documento['destinatario_nome'] ?>
              </td>

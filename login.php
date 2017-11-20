@@ -7,7 +7,7 @@
     if($usuario == null) {
         $_SESSION['danger'] = "<p class='center red-text'>Usuário ou senha inválidos</p>";
         header("Location: index.php");
-    }elseif($usuario['grupo_id'] == 26 ) {
+    }elseif($usuario['grupo_id'] == 1 ) {
         logaUsuario($usuario['nome']);
         header("Location: adm-principal.php");
     }else {

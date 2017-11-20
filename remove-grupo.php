@@ -12,14 +12,14 @@
 
         <p class="center red-text">O grupo <?=$usuarios['grupo_nome'];?> não pode ser removido pois existem usuários cadastrados.</p>
     <?php
-        //header("Location: adm-principal.php#grupos");
-        //die();
+        header("Location: adm-principal.php#grupos");
+        die();
     } else {
         removeGrupo($conexao, $id);?>
         <p class="center green-text">O grupo <?=$usuarios['grupo_nome'];?> foi removido com sucesso.</p>
     <?php
-        //header("Location: adm-principal.php#grupos");
-        //die();
+        header("Location: adm-principal.php#grupos");
+        die();
     }
 ?>
 

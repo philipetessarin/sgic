@@ -1,7 +1,4 @@
 <?php
-    //include('conecta.php');
-    //include ('banco-usuario.php');
-    //include('banco-grupo.php');
 
     $id = $_POST['id'];
     $grupo = buscaGrupo($conexao, $id);

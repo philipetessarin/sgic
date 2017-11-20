@@ -15,17 +15,6 @@
         </div>
     </div>
 </nav>
-<nav>
-    <div class="nav-wrapper #424242 grey darken-3 con">
-        <form>
-            <div class="input-field">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
-    </div>
-</nav>
 <br><br>
 
 <div id="criarUsuario" class="col s12 container">
@@ -34,6 +23,7 @@
 <div id="criarGrupo" class="col s12 container">
     <?php require_once('grupo-formulario.php'); ?>
 </div>
+
 
 
 <?php require_once('rodape.php');?>

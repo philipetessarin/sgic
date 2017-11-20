@@ -13,33 +13,33 @@ $destinatario = $_POST['destinatario_id'];
 $data = $_POST['data_atual'];
 $titulo = $_POST['titulo'];
 $mensagem = $_POST['mensagem'];
+$autorizacao = $_POST['autorizacao_id'];
 
 
-if(isset($_POST['submit']))
-{
+if(isset($_POST['submit'])) {
     $btnStatus = 0;
 
-    if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
-        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus);
+    if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem) ) {
+        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus, $autorizacao);
         ?>
-        <p class="center green-text">Documento <?=$titulo;?> adicionado com sucesso!</p>
+        <p class="center green-text">Documento <?=$titulo;?> enviado com sucesso!</p>
         <?php
         header( 'refresh: 1; url= "usuario-principal.php#recebidos"' );
         die();
     } else {
         $msg = mysqli_error($conexao);
         ?>
-        <p class="center red-text">Documento <?=$titulo;?> não foi adicionado.</p>
+        <p class="center red-text">Documento <?=$titulo;?> não foi enviado.</p>
         <?php
         header( 'refresh: 1; url= "documento.php#agendamento"' );
         die();
     }
-} elseif($_POST['save']) {
+} elseif(isset($_POST['save'])) {
 
     $btnStatus = 1;
 
     if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
-        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus);
+        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus, $autorizacao);
         ?>
         <p class="center green-text">Documento <?=$titulo;?> salvo com sucesso!</p>
         <?php
@@ -53,6 +53,27 @@ if(isset($_POST['submit']))
         header( 'refresh: 2; url= "documento.php#agendamento"' );
         die();
     }
+} elseif(isset($_POST['autorize'])){
+
+    $btnStatus = 2;
+
+    if(!empty($remetente) && !empty($destinatario) && !empty($data) && !empty($titulo) && !empty($mensagem)) {
+        insereDocumento($conexao, $remetente, $destinatario, $data, $titulo, $mensagem, $btnStatus, $autorizacao);
+        ?>
+        <p class="center green-text">Documento <?=$titulo;?> enviado para autorização!</p>
+        <?php
+        header( 'refresh: 2; url= "usuario-principal.php#recebidos"' );
+        die();
+    } else {
+        $msg = mysqli_error($conexao);
+        ?>
+        <p class="center red-text">Documento <?=$titulo;?> não foi enviado para autorização.</p>
+        <?php
+        header( 'refresh: 2; url= "documento.php#agendamento"' );
+        die();
+    }
+
+
 }
 
 

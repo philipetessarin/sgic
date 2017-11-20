@@ -1,12 +1,4 @@
 <?php
-    //include ('conecta.php');
-    //include ('logica-usuario.php');
-
-    //verificaUsuario();
-//include('banco-grupo.php');
-
-//$grupos = listaGrupos($conexao);
-
     $grupo = array("nome" => "", "descricao" => "");
 ?>
 

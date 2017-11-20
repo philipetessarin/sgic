@@ -4,7 +4,7 @@ require_once('conecta.php');
 
 function listaUsuarios($conexao) {
     $usuarios = array();
-    $resultado = mysqli_query($conexao, "select u.*, g.nome as grupo_nome from usuarios as u join grupos as g on u.grupo_id = g.id order by grupo_nome, nome");
+    $resultado = mysqli_query($conexao, "select u.*, g.nome as grupo_nome from usuarios as u join grupos as g on u.grupo_id = g.id order by nome, grupo_nome");
 
     while($usuario = mysqli_fetch_assoc($resultado)) {
         array_push($usuarios, $usuario);

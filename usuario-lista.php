@@ -3,7 +3,6 @@
     require_once('banco-usuario.php');
     require_once('logica-usuario.php');
     require_once('paginacao-usuario-comeco.php');
-    //$usuarios = listaUsuarios($conexao);
 
 
 ?>

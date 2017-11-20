@@ -1,12 +1,8 @@
 <?php
-require_once('cadastro-cabecalho.php');
-require_once ('banco-usuario.php');
-require_once ('logica-usuario.php');
 
-
-
-
-
+    require_once('cadastro-cabecalho.php');
+    require_once ('banco-usuario.php');
+    require_once ('logica-usuario.php');
 
 $pesquisar = $_POST['pesquisar'];
 $result_groups = "select * from  grupos  where nome like '%$pesquisar%' LIMIT 5";
