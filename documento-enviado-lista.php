@@ -40,12 +40,6 @@
                         <input type="hidden" name="id" value="<?= $documento['id'] ?>">
                         <button class="btn blue">Visualizar</button>
                     </form>
-                <td>
-                    <form action="remove-documento.php" method="post">
-                        <input type="hidden" name="executado" value="<?= $documento['id'] ?>">
-                        <button class="btn red">EXECUTADO</button>
-                    </form>
-                </td>
             </tr>
             </tbody>
 

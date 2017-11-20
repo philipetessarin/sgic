@@ -16,7 +16,7 @@
         if($data[0] > 1) {?>
             <p class="center red-text">O Grupo <?= $nome; ?> já existe.</p>
             <?php
-            header('refresh: 2; url= "cadastro.php#criarGrupo"');
+            header('refresh: 1; url= "cadastro.php#criarGrupo"');
             die();
         } else {
 
@@ -26,14 +26,14 @@
                 ?>
                 <p class="center green-text">Grupo <?= $nome; ?> adicionado com sucesso!</p>
                 <?php
-                header('refresh: 2; url= "adm-principal.php#grupos"');
+                header('refresh: 1; url= "adm-principal.php#grupos"');
                 die();
             } else {
                 $msg = mysqli_error($conexao);
                 ?>
                 <p class="center red-text">Grupo <?= $nome; ?> não foi adicionado. Preencha os campos</p>
                 <?php
-                header('refresh: 2; url= "cadastro.php#criarGrupo"');
+                header('refresh: 1; url= "cadastro.php#criarGrupo"');
                 die();
             }
 

@@ -12,14 +12,14 @@ if(alteraGrupo($conexao, $id, $nome, $descricao)) { ?>
     <p class="green-text center">O grupo <?=$nome?> foi alterado.</p>
 
 <?php
-    header( 'refresh: 2; url= "adm-principal.php#grupos"' );
+    header( 'refresh: 1; url= "adm-principal.php#grupos"' );
     die();
 } else {
     $msg = mysqli_error($conexao);
     ?>
     <p class="red-text center">O grupo <?=$nome?> não foi alterado: <?= $msg?></p>
     <?php
-    header( 'refresh: 2; url= "alteracao.php#alterarGrupo"' );
+    header( 'refresh: 1; url= "alteracao.php#alterarGrupo"' );
     die();
 }
 ?>

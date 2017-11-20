@@ -1,2 +1,2 @@
 <?php
-$conexao = mysqli_connect("localhost", "root", "", "bd_sgic");
+$conexao = mysqli_connect("localhost", "root", "", "db_sgic");

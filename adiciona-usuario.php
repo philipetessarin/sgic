@@ -20,7 +20,7 @@
         if($data[0] > 1) {?>
             <p class="center red-text">O Usuário <?= $nome; ?> já existe. Insira outro nome.</p>
             <?php
-                header('refresh: 2; url= "cadastro.php#criarUsuario"');
+                header('refresh: 1; url= "cadastro.php#criarUsuario"');
                 die();
         } else {
 
@@ -30,14 +30,14 @@
                 ?>
                 <p class="center green-text">Usuário <?= $nome; ?> adicionado com sucesso!</p>
                 <?php
-                header('refresh: 2; url= "adm-principal.php#usuarios"');
+                header('refresh: 1; url= "adm-principal.php#usuarios"');
                 die();
             } else {
                 $msg = mysqli_error($conexao);
                 ?>
                 <p class="center red-text">Usuário <?= $nome; ?> não foi adicionado.</p>
                 <?php
-                header('refresh: 2; url= "cadastro.php#criarUsuario"');
+                header('refresh: 1; url= "cadastro.php#criarUsuario"');
                 die();
             }
         }

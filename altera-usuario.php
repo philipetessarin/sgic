@@ -16,7 +16,7 @@ if(alteraUsuario($conexao, $id, $nome, $setor, $email, $senha, $grupo_id)) { ?>
     <p class="green-text center">O usuário <?=$nome?> foi alterado.</p>
 
 <?php
-    header( 'refresh: 2; url= "adm-principal.php"' );
+    header( 'refresh: 1; url= "adm-principal.php"' );
     die();
 } else {
     $msg = mysqli_error($conexao);
